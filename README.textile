@@ -4,7 +4,8 @@ h2. Overview
 
 Pretty greeter is a @lightdm-webkit@ based animated greeter using a mimicking of the Dock of OS X.
 
-!https://raw.github.com/jfbrazeau/lightdm-webkit-prettygreeter/master/screenshot.jpg!
+!{width:60%}https://raw.github.com/jfbrazeau/lightdm-webkit-prettygreeter/master/screenshot.jpg!
+__(click to enlarge screenshot)__
 
 h2. Installation
 

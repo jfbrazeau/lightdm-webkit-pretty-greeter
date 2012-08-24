@@ -1,0 +1,15 @@
+h1. lightdm-webkit-prettygreeter
+
+h2. Overview
+
+Pretty greeter is a @lightdm-webkit@ based animated greeter using a mimicking of the Dock of OS X.
+
+!screenshot.jpg!
+
+h2. Installation
+
+TODO
+
+h2. User icons management
+
+TODO

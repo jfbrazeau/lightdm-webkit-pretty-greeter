@@ -1,0 +1,51 @@
+html {
+	background: url('../img/bg.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+div.dockArea {
+	position: absolute;
+	top: 25%;
+	left: 0%;
+	width: 100%;
+	height: 100px;
+}
+
+div.password, div.status, div.timer {
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	width: 100%;
+	text-align: center;
+	display: none;
+}
+
+div.actions {
+	position: absolute;
+	right:5px;
+	bottom: 0;
+}
+
+div.log {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 25%;
+	height: 100%;
+	overflow:scroll;
+	display : none;
+	font-size: 65%;
+}
+
+input.password {
+    border: 5px solid white; 
+    background: rgba(255,255,255,0.5);
+    opacity: 0.5;
+	border-radius: 10px;
+	font-size:80%;
+	padding : 5px;
+	
+}

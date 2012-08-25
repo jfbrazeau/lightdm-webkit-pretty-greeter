@@ -1,16 +1,67 @@
-h1. lightdm-webkit-prettygreeter
-
-h2. Overview
+h1. Overview
 
 Pretty greeter is a @lightdm-webkit@ based animated greeter using a mimicking of the Dock of OS X.
 
-!{width:300px}https://raw.github.com/jfbrazeau/lightdm-webkit-prettygreeter/master/screenshot.jpg!
-__(click to enlarge screenshot)__
+!https://raw.github.com/jfbrazeau/lightdm-webkit-pretty-greeter/master/screenshot.jpg!
 
-h2. Installation
+Pretty greeter uses "CSS Dock V2":http://michaelhue.com/cssdock/.
 
-TODO
+h1. Installation
 
-h2. User icons management
+h2. Prerequisites
 
-TODO
+Pretty greeter is built on top of lightdm-webkit-greeter. So it has to be installed.
+
+For Ubuntu users, if you haven't already installed it, open a terminal and type:
+
+bc. 
+apt-get install ligthdm-webkit-greeter 
+
+Enable @ligthdm-webkit-greeter@ by editing @/etc/lightdm/lightdm.conf@ and by setting @greeter-session@ property to @lightdm-webkit-greeter@ :
+
+bc. 
+[SeatDefaults]
+#greeter-session=lightdm-gtk-greeter
+greeter-session=lightdm-webkit-greeter
+user-session=xubuntu
+
+h2. Pretty greeter installation
+
+# Download "pretty greeter":https://github.com/jfbrazeau/lightdm-webkit-pretty-greeter/zipball/master
+# Unzip it in @https://github.com/jfbrazeau/lightdm-webkit-pretty-greeter/tarball/master@
+# This should create a folder named like @jfbrazeau-lightdm-webkit-pretty-greeter-28c4b13@
+# Rename this folder to @pretty@ (so that the complete path becomes @/usr/share/lightdm-webkit/themes/pretty@)
+# Edit the resource @/etc/lightdm/lightdm-webkit-greeter.conf@ and set @webkit-theme@ property to @pretty@ :
+
+bc. 
+theme-name=Ambiance
+#webkit-theme=default
+webkit-theme=pretty
+font-name=Ubuntu 11
+xft-antialias=true
+xft-dpi=96
+xft-hintstyle=slight
+xft-rgba=rgb
+
+Now if you restart your computer (or at least if you restart lightdm), the pretty greeter should be activated. 
+
+h1. Uninstallation
+
+To uninstall pretty greeter, simply restore the @greeter-session@ property of the @/etc/lightdm/lightdm.conf@ file and restart your computer (or at least lightdm).
+
+You may also want to :
+# Remove the folder @pretty@ created in @/usr/share/lightdm-webkit/themes/@
+# Restore the @webkit-theme@ property of the @/etc/lightdm/lightdm-webkit-greeter.conf@ file
+
+h1. User icons management
+
+To change users icons, there are two options :
+
+* Create a @.face@ file in the user's home folder in which you put a @jpg@ or @png@ resource
+
+Or 
+
+* Create a resource named with the user's login in @/var/lib/AccountsService/icons/@
+* Edit @/var/lib/AccountsService/users/<userLogin>@ and add a property @Icon@ targeting the icon resource you just created
+
+Pretty greeter works well with 96x96 images.
